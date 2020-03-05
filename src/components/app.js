@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import Header from '../containers/header'
 import { Route, Switch } from 'react-router-dom'
 import Ressources from './ressources'
-import TodoApp from '../components/todo-app'
+import Home from '../components/home'
 import RequireAuthentification from "../helpers/require-authentification"
+import {HookTest} from '../components/hook-test'
 
 class App extends Component {
     render() {
@@ -11,7 +12,7 @@ class App extends Component {
             <div>
                 <Header/>
                 <Switch>
-                    <Route exact path="/" component={Ressources}/>
+                    <Route exact path="/" component={HookTest}/>
                     <Route exact path="/ressources" 
                     component={RequireAuthentification(Ressources)}/>
                 </Switch>

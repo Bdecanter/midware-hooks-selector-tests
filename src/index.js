@@ -8,8 +8,9 @@ import thunk from 'redux-thunk'
 import reducers from './reducers'
 import App from './components/app'
 import {actionCounter} from './middlewares/action-counter'
+const invariant = require("redux-immutable-state-invariant").default()
 
-const createStoreWithMiddleware = applyMiddleware(thunk, actionCounter)(createStore)
+const createStoreWithMiddleware = applyMiddleware(invariant, thunk, actionCounter)(createStore)
 
 ReactDOM.render(
     <Provider
